@@ -14,6 +14,8 @@ javacOptions in (Test) ++= javaCompilerOptions
 
 // Library Dependencies
 libraryDependencies += "org.codehaus.janino" % "janino" % "3.0.11"
+libraryDependencies += "junit" % "junit" % "4.13" % Test
+libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % Test
 
 // add license files to jar
 mappings in (Compile, packageBin) += (baseDirectory.value / "src" / "main" / "licenses" / "license.amd") -> "license.amd"
@@ -21,3 +23,6 @@ mappings in (Compile, packageBin) += (baseDirectory.value / "src" / "main" / "li
 mappings in (Compile, packageBin) += (baseDirectory.value / "src" / "main" / "licenses" / "license.tcllib") -> "license.tcllib"
 mappings in (Compile, packageBin) += (baseDirectory.value / "src" / "main" / "licenses" / "license.terms") -> "license.terms"
 mappings in (Compile, packageBin) += (baseDirectory.value / "src" / "main" / "licenses" / "license.ucb") -> "license.ucb"
+
+mainClass in assembly := Some("tcl.lang.Shell")
+test in assembly := {}

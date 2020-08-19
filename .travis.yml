@@ -1,0 +1,14 @@
+language: scala
+sudo: false
+cache:
+  directories:
+    - $HOME/.cache/coursier
+    - $HOME/.ivy2/cache
+    - $HOME/.sbt
+jdk:
+  - openjdk8
+  - openjdk9
+  - openjdk10
+  - openjdk11
+script: |
+    sbt ++$TRAVIS_SCALA_VERSION test
