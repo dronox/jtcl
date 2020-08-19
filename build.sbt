@@ -23,3 +23,6 @@ mappings in (Compile, packageBin) += (baseDirectory.value / "src" / "main" / "li
 mappings in (Compile, packageBin) += (baseDirectory.value / "src" / "main" / "licenses" / "license.tcllib") -> "license.tcllib"
 mappings in (Compile, packageBin) += (baseDirectory.value / "src" / "main" / "licenses" / "license.terms") -> "license.terms"
 mappings in (Compile, packageBin) += (baseDirectory.value / "src" / "main" / "licenses" / "license.ucb") -> "license.ucb"
+
+mainClass in assembly := Some("tcl.lang.Shell")
+test in assembly := {}
